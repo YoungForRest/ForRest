@@ -1,0 +1,11 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /bootdemo
+  port: 8080
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+#  mvc:
+#    static-path-pattern: /static/**

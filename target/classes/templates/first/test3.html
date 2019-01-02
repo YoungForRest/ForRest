@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="jqueryui/style.css">
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <script>
+        $(document).ready(function(){
+            $("#progressbar").progressbar({
+                value: false
+            });
+
+            $("#myInput").change(function() {
+                    var progressbar = $("#progressbar");
+                    var i = $("#myInput").val();
+                    progressbar.progressbar( "option", {
+                        value: i++
+                    });
+                });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="progressbar"></div>
+    <input id="myInput" type="text">
+</body>
+</html>
