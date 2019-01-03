@@ -1,25 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="jqueryui/style.css">
-    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <script th:src="@{/plugins/love/love.js}"></script>
     <script>
-        $(document).ready(function(){
-            $("#progressbar").progressbar({
-                value: false
-            });
-
-            $("#myInput").change(function() {
-                    var progressbar = $("#progressbar");
-                    var i = $("#myInput").val();
-                    progressbar.progressbar( "option", {
-                        value: i++
-                    });
-                });
-        });
 
     </script>
 </head>
