@@ -1,2 +1,2 @@
 # bootdemo
-this is first springboot dome
+this is first springboot demo
