@@ -1,12 +1,12 @@
-package com.zys;
+package com.youngth.zhou;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BootdemoApplication {
+public class ForRestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootdemoApplication.class, args);
+		SpringApplication.run(ForRestApplication.class, args);
 	}
 }

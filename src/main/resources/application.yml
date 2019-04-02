@@ -2,7 +2,7 @@ server:
   tomcat:
     uri-encoding: UTF-8
   servlet:
-    context-path: /bootdemo
+    context-path: /forRest
   port: 8080
 spring:
   thymeleaf:

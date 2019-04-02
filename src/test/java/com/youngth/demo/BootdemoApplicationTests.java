@@ -1,4 +1,4 @@
-package com.zys.demo;
+package com.youngth.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
