@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.youngth.zhou</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0.0</version>
+    <name>parent</name>
+    <packaging>pom</packaging>
+
+    <description>基础父模块</description>
+
+
+    <!-- dependencies即使在子项目中不写该依赖项，那么子项目仍然会从父项目中继承该依赖项（全部继承）
+
+         dependencyManagement里只是声明依赖，并不实现引入，因此子项目需要显示的声明需要用的依赖。
+         如果不在子项目中声明依赖，是不会从父项目中继承下来的；
+         只有在子项目中写了该依赖项，并且没有指定具体版本，才会从父项目中继承该项，
+         并且version和scope都读取自父pom;另外如果子项目中指定了版本号，
+         那么会使用子项目中指定的jar版本。
+     -->
+    <!--使用dependencyManagement 定义子项目依赖版本-->
+
+    <!--使用dependencies定义全局依赖-->
+</project>
