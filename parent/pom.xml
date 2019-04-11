@@ -26,6 +26,8 @@
         <spring-boot-thymeleaf.version>2.0.6.RELEASE</spring-boot-thymeleaf.version>
         <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
         <ibeetl.version>2.9.3</ibeetl.version>
+        <!--私有库版本-->
+        <com.youngth.zhou.version>1.0.0.0</com.youngth.zhou.version>
     </properties>
 
     <!-- dependencies即使在子项目中不写该依赖项，那么子项目仍然会从父项目中继承该依赖项（全部继承）
@@ -70,6 +72,13 @@
                 <groupId>com.ibeetl</groupId>
                 <artifactId>beetl</artifactId>
                 <version>${ibeetl.version}</version>
+            </dependency>
+
+            <!--私有库定义-->
+            <dependency>
+                <groupId>com.youngth.zhou</groupId>
+                <artifactId>entity</artifactId>
+                <version>${com.youngth.zhou.version}</version>
             </dependency>
 
         </dependencies>
