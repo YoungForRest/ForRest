@@ -24,8 +24,13 @@
         <!-- spring-boot 2.1.3.RELEASE 对应的 spring-web版本-->
         <spring-web.version>5.1.5.RELEASE</spring-web.version>
         <spring-boot-thymeleaf.version>2.0.6.RELEASE</spring-boot-thymeleaf.version>
+        <mybatisplus-spring-boot-starter.version>1.0.5</mybatisplus-spring-boot-starter.version>
+        <mybatis-plus.version>2.1.9</mybatis-plus.version>
+        <druid.version>1.1.10</druid.version>
         <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
+        <oracle.version>14</oracle.version>
         <ibeetl.version>2.9.3</ibeetl.version>
+
         <!--私有库版本-->
         <com.youngth.zhou.version>1.0.0.0</com.youngth.zhou.version>
     </properties>
@@ -59,6 +64,24 @@
                 <artifactId>spring-boot-starter-thymeleaf</artifactId>
                 <version>${spring-boot-thymeleaf.version}</version>
             </dependency>
+            <!--mybatisplus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatisplus-spring-boot-starter</artifactId>
+                <version>${mybatisplus-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--数据源-->
+            <!--druid-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
             <!--mysql 连接-->
             <dependency>
                 <groupId>mysql</groupId>
@@ -66,6 +89,13 @@
                 <version>${mysql-connector-java.version}</version>
                 <scope>runtime</scope>
             </dependency>
+            <!--oracle 连接-->
+            <dependency>
+                <groupId>ojdbc</groupId>
+                <artifactId>ojdbc</artifactId>
+                <version>${oracle.version}</version>
+            </dependency>
+
 
             <!--beetl-->
             <dependency>

@@ -12,6 +12,7 @@
 		<module>entity</module>
 		<module>web</module>
         <module>parent</module>
+        <module>is</module>
     </modules>
 	<name>forRest</name>
 	<packaging>pom</packaging>
