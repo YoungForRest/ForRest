@@ -12,9 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
@@ -28,7 +28,7 @@ import java.util.Map;
  * @date 2019/4/17
  * mybatisPlus配置类   采用多数据源配置方式，方便后期添加数据源
  */
-@Component
+@Configuration
 @EnableTransactionManagement(order = 2)
 @MapperScan(basePackages = {"com.youngth.zhou.is.mapper"})//mybatis 包扫描路径
 public class MybatisPlusConfig implements TransactionManagementConfigurer {
@@ -66,11 +66,12 @@ public class MybatisPlusConfig implements TransactionManagementConfigurer {
      * 动态数据源配置
      */
     @Bean
-    public DynamicDataSource roundRobinDataSouceProxy() {
+    public DynamicDataSource roundRobinDataSourceProxy() {
         try {
             DynamicDataSource dynamicDataSource = new DynamicDataSource();
             Map<Object, Object> targetDataSources = new HashMap<>();
             DruidDataSource masterDataSource = masterDataSource();
+            masterDataSource.init();
             logger.info("主数据库初始化完成！");
             targetDataSources.put(Database.DB_MASTER.id(),masterDataSource);
 
@@ -88,7 +89,7 @@ public class MybatisPlusConfig implements TransactionManagementConfigurer {
      */
     @Bean
     public PlatformTransactionManager txManager() {
-        return new DataSourceTransactionManager(roundRobinDataSouceProxy());
+        return new DataSourceTransactionManager(roundRobinDataSourceProxy());
     }
 
 
