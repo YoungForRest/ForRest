@@ -1,0 +1,10 @@
+###############开发环境配置文件#####################
+
+############引入数据源#############
+datasource:
+  sources:
+    ####主数据库
+    master:
+      url: jdbc:oracle:thin:@//localhost:1521/XE
+      username: youngth
+      password: zys123

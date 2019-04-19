@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author YoungTH
  * @date 2019/4/2
- * springboot 启动入口
+ * web 启动入口
  */
 @SpringBootApplication
 public class ForRestWebApplication {
