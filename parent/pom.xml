@@ -30,7 +30,9 @@
         <druid.version>1.1.10</druid.version>
         <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
         <oracle.version>14</oracle.version>
+        <jasypt-spring-boot.version>2.1.0</jasypt-spring-boot.version>
         <ibeetl.version>2.9.3</ibeetl.version>
+
 
         <!--私有库版本-->
         <com.youngth.zhou.version>1.0.0.0</com.youngth.zhou.version>
@@ -101,7 +103,12 @@
                 <artifactId>ojdbc</artifactId>
                 <version>${oracle.version}</version>
             </dependency>
-
+            <!-- 属性加密 -->
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt-spring-boot.version}</version>
+            </dependency>
 
             <!--beetl-->
             <dependency>
