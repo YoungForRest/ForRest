@@ -30,4 +30,8 @@ public class FirstController {
     public String test3(){
         return PREFIX+"test3.html";
     }
+    @RequestMapping("/test4")
+    public String test4(){
+        return PREFIX+"test4.html";
+    }
 }
