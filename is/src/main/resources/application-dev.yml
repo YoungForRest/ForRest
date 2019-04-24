@@ -7,4 +7,4 @@ datasource:
     master:
       url: jdbc:oracle:thin:@//localhost:1521/XE
       username: youngth
-      password: zys123
+      password: YoungTH@@[BtcD77q0iiEhKfLF3h5bll8o1uomz03zIa/jTe8p32U=]
