@@ -2,6 +2,7 @@ package com.youngth.zhou.is.test;
 
 import com.youngth.zhou.entity.ForrestUser;
 import com.youngth.zhou.is.service.ForrestUserService;
+import com.youngth.zhou.is.service.TestService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class DbConnectTest {
     @Autowired
     private ForrestUserService forrestUserService;
+    @Autowired
+    TestService testService;
     @Test
     public void fun1(){
         ForrestUser forrestUser = forrestUserService.selectById("865EC4A2175A42A6AB20B7E1D869515B");
         System.out.println(forrestUser);
+    }
+
+
+    @Test
+    public void fun2(){
+        testService.TestTryAgain();
+
     }
 }
