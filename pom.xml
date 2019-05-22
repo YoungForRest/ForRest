@@ -13,6 +13,7 @@
 		<module>web</module>
         <module>parent</module>
         <module>is</module>
+        <module>utils</module>
     </modules>
 	<name>forRest</name>
 	<packaging>pom</packaging>

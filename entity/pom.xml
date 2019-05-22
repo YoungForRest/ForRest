@@ -21,6 +21,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.youngth.zhou</groupId>
+            <artifactId>utils</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-support</artifactId>
         </dependency>

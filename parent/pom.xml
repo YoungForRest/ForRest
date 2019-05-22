@@ -123,7 +123,11 @@
                 <artifactId>entity</artifactId>
                 <version>${com.youngth.zhou.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.youngth.zhou</groupId>
+                <artifactId>utils</artifactId>
+                <version>${com.youngth.zhou.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <!--使用dependencies定义全局依赖-->

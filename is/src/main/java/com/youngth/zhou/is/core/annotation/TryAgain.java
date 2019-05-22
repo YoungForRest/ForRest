@@ -1,7 +1,5 @@
 package com.youngth.zhou.is.core.annotation;
 
-import com.youngth.zhou.baseEnum.Database;
-
 import java.lang.annotation.*;
 
 /**
