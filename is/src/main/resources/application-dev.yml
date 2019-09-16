@@ -2,9 +2,10 @@
 
 ############引入数据源#############
 datasource:
+  dbtype: mysql
   sources:
     ####主数据库
     master:
-      url: jdbc:oracle:thin:@//localhost:1521/XE
-      username: youngth
-      password: YoungTH@@[BtcD77q0iiEhKfLF3h5bll8o1uomz03zIa/jTe8p32U=]
+      url: jdbc:mysql://192.168.10.169:3306/youngth?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+      username: YoungTH
+      password: YoungTH@@[01YU+j3GIrE+FBf1wu3eTDOg7abkra+L9odxPTACBxo=]

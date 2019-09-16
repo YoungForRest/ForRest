@@ -6,6 +6,7 @@ import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.util.JdbcUtils;
 import com.alibaba.druid.wall.WallFilter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.sql.SQLException;
@@ -19,56 +20,59 @@ import java.util.List;
  */
 @Component
 public class DataSourceProperties {
+
+    @Value("${datasource.dbtype}")
+    private String dbtype = "";
     /**
      * 数据库驱动类名
      * druid 会根据url 自动识别
      */
-    private String driverClassName="";
+    private String driverClassName = "";
     /**
      * 初始化时建立物理连接的个数。初始化发生在显示调用init方法，或者第一次getConnection时
      */
-    private Integer initialSize=1;
+    private Integer initialSize = 1;
     /**
      * 最大连接池数量
      */
-    private Integer maxActive=8;
+    private Integer maxActive = 8;
     /**
-     * 	最小连接池数量
+     * 最小连接池数量
      */
-    private Integer minIdle=1;
+    private Integer minIdle = 1;
     /**
      * 获取连接时最大等待时间，单位毫秒。
      * 配置了maxWait之后，缺省启用公平锁，并发效率会有所下降，如果需要可以通过配置useUnfairLock属性为true使用非公平锁。
      */
-    private Integer maxWait=60000;
+    private Integer maxWait = 60000;
     /**
      * 是否缓存preparedStatement，也就是PSCache。
      * PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
      */
-    private boolean poolPreparedStatements=true;
+    private boolean poolPreparedStatements = true;
     /**
      * 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。
      * 在Druid中，不会存在Oracle下PSCache占用内存过多的问题，可以把这个数值配置大一些，比如说100
      */
-    private Integer maxOpenPreparedStatements=10;
+    private Integer maxOpenPreparedStatements = 10;
     /**
      * 用来检测连接是否有效的sql，要求是一个查询语句。
      * 如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会其作用。
      */
-    private String validationQuery="SELECT 'A' FROM DUAL";
+    private String validationQuery = "SELECT 'A' FROM DUAL";
     /**
      * 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
      */
-    private boolean testOnBorrow=false;
+    private boolean testOnBorrow = false;
     /**
      * 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
      */
-    private boolean testOnReturn=false;
+    private boolean testOnReturn = false;
     /**
      * 建议配置为true，不影响性能，并且保证安全性。
      * 申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
      */
-    private boolean testWhileIdle=true;
+    private boolean testWhileIdle = true;
     /**
      * 有两个含义：
      * 1) Destroy线程会检测连接的间隔时间
@@ -76,14 +80,14 @@ public class DataSourceProperties {
      */
     private Integer timeBetweenEvictionRunsMillis = 60000;
     /**
-     * 	Destory线程中如果检测到当前连接的最后活跃时间和当前时间的差值大于
-     *   minEvictableIdleTimeMillis，则关闭当前连接。
+     * Destory线程中如果检测到当前连接的最后活跃时间和当前时间的差值大于
+     * minEvictableIdleTimeMillis，则关闭当前连接。
      */
     private Integer minEvictableIdleTimeMillis = 300000;
     /**
      * 物理连接初始化的时候执行的sql
      */
-    private String connectionInitSqls="";
+    private String connectionInitSqls = "";
     /**
      * 当数据库抛出一些不可恢复的异常时，抛弃连接
      */
@@ -93,7 +97,7 @@ public class DataSourceProperties {
      * 常用的插件有：
      * 监控统计用的filter:stat
      * 日志用的filter:log4j
-     *  防御sql注入的filter:wall
+     * 防御sql注入的filter:wall
      */
     private String filters = "stat";
     /**
@@ -105,10 +109,11 @@ public class DataSourceProperties {
     /**
      * 打开PSCache，并且指定每个连接上PSCache的大小
      */
-    private Integer maxPoolPreparedStatementPerConnectionSize=20;
+    private Integer maxPoolPreparedStatementPerConnectionSize = 20;
 
 
-    public void congfig(DruidDataSource dataSource){
+    public void congfig(DruidDataSource dataSource) {
+        dataSource.setDriverClassName(driverClassName);
         dataSource.setInitialSize(initialSize);     //定义初始连接数
         dataSource.setMinIdle(minIdle);             //最小空闲
         dataSource.setMaxActive(maxActive);         //定义最大连接数
@@ -192,10 +197,17 @@ public class DataSourceProperties {
      */
     private WallFilter wallFilter() {
         WallFilter wallFilter = new WallFilter();
-        wallFilter.setDbType(JdbcUtils.ORACLE);
+        wallFilter.setDbType(dbtype);
         return wallFilter;
     }
 
+    public String getDbtype() {
+        return dbtype;
+    }
+
+    public void setDbtype(String dbtype) {
+        this.dbtype = dbtype;
+    }
 
     public String getDriverClassName() {
         return driverClassName;

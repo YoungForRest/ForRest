@@ -4,7 +4,10 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
@@ -19,7 +22,7 @@ public class ForrestUser extends Model<ForrestUser> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("USERID")
+    @TableId(value = "USERID",type = IdType.ID_WORKER_STR)
     private String userid;
     @TableField("USERNAME")
     private String username;
