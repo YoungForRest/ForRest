@@ -28,7 +28,7 @@
         <mybatis-plus.version>2.1.9</mybatis-plus.version>
         <mybatis-plus.version>2.1.9</mybatis-plus.version>
         <druid.version>1.1.10</druid.version>
-        <mysql-connector-java.version>8.0.13</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
         <jasypt-spring-boot.version>2.1.1</jasypt-spring-boot.version>
         <ibeetl.version>2.9.3</ibeetl.version>
 
